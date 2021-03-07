@@ -1,11 +1,14 @@
 import React from "react";
-import { AppBar, Button, Toolbar, Typography } from "@material-ui/core";
 
-type Link = {
-  path: string;
-  name: string;
-  key: React.Key;
-}
+import {
+  AppBar,
+  Avatar,
+  Toolbar,
+  Typography,
+  Link as NavLink,
+} from "@material-ui/core";
+import profilePic from "./../img/profile-pic.jpg";
+import NavItem, { Link } from "./NavItem";
 
 interface Props {
   links: Link[];
@@ -17,14 +20,17 @@ const Navbar: React.FC<Props> = ({ homeLink, title, links }) => {
   return (
     <AppBar position="static">
       <Toolbar>
-        <Typography variant="h4" style={{ flexGrow: 1 }}>
-          {title}
-        </Typography>
+        <NavLink href={homeLink.path}>
+          <Avatar src={profilePic} style={{ marginRight: "20px" }} />
+        </NavLink>
+        <div style={{ flexGrow: 1 }}>
+          <Typography color="inherit" variant="h4">
+            {title}
+          </Typography>
+        </div>
         <div className="nav-links">
           {links.map((link: Link) => (
-            <Button color="inherit" key={link.key}>
-              {link.name}
-            </Button>
+            <NavItem link={link} />
           ))}
         </div>
       </Toolbar>
