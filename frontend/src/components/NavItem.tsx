@@ -1,19 +1,18 @@
 import { Button } from "@chakra-ui/button";
 import React from "react";
-import { Link as RouterLink } from "react-router-dom";
+import ChakraRouterLink from "./ChakraRouterLink";
 
 export type Link = {
   path: string;
   name: string;
-  key: React.Key;
 };
 
 interface NavItemProps {
   link: Link;
 }
 
-const NavItem: React.FC<NavItemProps> = ({ link: { path, name, key } }) => (
-  <Button as={RouterLink} to={path} size="sm">
+const NavItem: React.FC<NavItemProps> = ({ link: { path, name } }) => (
+  <Button as={ChakraRouterLink} variant="ghost" rounded="xl" to={path}>
     {name}
   </Button>
 );
