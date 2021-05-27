@@ -1,14 +1,13 @@
 import React from "react";
 
-import {
-  AppBar,
-  Avatar,
-  Toolbar,
-  Typography,
-  Link as NavLink,
-} from "@material-ui/core";
 import profilePic from "./../img/profile-pic.jpg";
 import NavItem, { Link } from "./NavItem";
+import { Heading, HStack } from "@chakra-ui/layout";
+import { List } from "@chakra-ui/layout";
+import { Box } from "@chakra-ui/layout";
+import { Link as NavLink } from "@chakra-ui/layout";
+import { Link as RouterLink } from "react-router-dom";
+import { Avatar } from "@chakra-ui/avatar";
 
 interface Props {
   links: Link[];
@@ -18,23 +17,16 @@ interface Props {
 
 const Navbar: React.FC<Props> = ({ homeLink, title, links }) => {
   return (
-    <AppBar position="static">
-      <Toolbar>
-        <NavLink href={homeLink.path}>
-          <Avatar src={profilePic} style={{ marginRight: "20px" }} />
-        </NavLink>
-        <div style={{ flexGrow: 1 }}>
-          <Typography color="inherit" variant="h4">
-            {title}
-          </Typography>
-        </div>
-        <div className="nav-links">
-          {links.map((link: Link) => (
-            <NavItem link={link} />
-          ))}
-        </div>
-      </Toolbar>
-    </AppBar>
+    <HStack py={2} px={3}>
+      <Box flexGrow={1} >
+        <Heading size="lg">{title}</Heading>
+      </Box>
+      <List as={HStack} >
+        {links.map((link, idx) => (
+          <NavItem link={link} key={idx}/>
+        ))}
+      </List>
+    </HStack>
   );
 };
 

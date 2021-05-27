@@ -5,22 +5,25 @@ import Routes from "./components/Routes";
 import Navbar from "./components/Navbar";
 
 import "./App.css";
+import { ChakraProvider } from "@chakra-ui/react";
 
 const App: React.FC = () => {
   return (
-    <div>
-      <Router>
-        <Navbar
-          title="Mena Filfil"
-          homeLink={{ name: "Home", path: "/", key: "home" }}
-          links={[
-            { name: "Projects", path: "/projects", key: "projects" },
-            { name: "About", path: "/about", key: "projects" },
-          ]}
-        />
-        <Routes />
-      </Router>
-    </div>
+    <ChakraProvider>
+      <div>
+        <Router>
+          <Navbar
+            title="Mena Filfil"
+            homeLink={{ name: "Home", path: "/", key: "home" }}
+            links={[
+              { name: "Projects", path: "/projects", key: "projects" },
+              { name: "About", path: "/about", key: "projects" },
+            ]}
+          />
+          <Routes />
+        </Router>
+      </div>
+    </ChakraProvider>
   );
 };
 
