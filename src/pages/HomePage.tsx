@@ -1,5 +1,6 @@
 import { Box } from "@chakra-ui/layout";
 import React from "react";
+import { Helmet } from "react-helmet";
 import Body from "../components/Body";
 import LinkSpan from "../components/LinkSpan";
 import SkillsList from "../components/SkillsList";
@@ -9,6 +10,9 @@ import { skills } from "../consts";
 const HomePage: React.FC = () => {
   return (
     <Box>
+      <Helmet>
+        <title>Mena Filfil - Home</title>
+      </Helmet>
       <Title>Hey, I'm Mena 👋</Title>
       <Body>
         I'm a high school junior from NJ who is passionate about STEM and
