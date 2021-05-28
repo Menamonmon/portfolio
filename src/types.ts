@@ -9,3 +9,7 @@ export type Link = {
   name: string;
   path: string;
 };
+
+export type SocialMediaLink = Link & {
+  icon: IconType;
+};

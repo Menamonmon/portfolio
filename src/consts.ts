@@ -1,6 +1,10 @@
 import {
   SiDjango,
   SiDocker,
+  SiFacebook,
+  SiFiverr,
+  SiGithub,
+  SiGmail,
   SiHtml5,
   SiJavascript,
   SiLinux,
@@ -12,9 +16,10 @@ import {
   SiPython,
   SiReact,
   SiSocketDotIo,
+  SiTwitter,
 } from "react-icons/si";
 import { Link } from "./components/NavItem";
-import { Skill } from "./types";
+import { Skill, SocialMediaLink } from "./types";
 
 const maxWidth = "700px";
 const navLinks: Link[] = [
@@ -36,5 +41,36 @@ const skills: Skill[] = [
   { icon: SiPypi, name: "Pygame" },
   { icon: SiDocker, name: "Docker" },
 ];
+const footerLinks: Link[] = [
+  { name: "Get In Touch", path: "/contact-me" },
+  { name: "Privacy", path: "/privacy-policy" },
+];
+const socialMediaLinks: SocialMediaLink[] = [
+  {
+    icon: SiFacebook,
+    name: "Facebook",
+    path: "https://facebook.com/mena.filfil.9",
+  },
+  {
+    icon: SiTwitter,
+    name: "Twitter",
+    path: "https://twitter.com/menamonmon9",
+  },
+  {
+    icon: SiGithub,
+    name: "Github",
+    path: "https://github.com/menamonmon",
+  },
+  {
+    icon: SiFiverr,
+    name: "Fiverr",
+    path: "https://fiverr.com/menamonmon",
+  },
+  {
+    icon: SiGmail,
+    name: "Email",
+    path: "mailto:monyasser111@gmail.com",
+  },
+];
 
-export { maxWidth, navLinks, skills };
+export { maxWidth, navLinks, skills, footerLinks, socialMediaLinks };
