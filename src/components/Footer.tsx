@@ -1,5 +1,4 @@
 import {
-  Box,
   Heading,
   HStack,
   List,
@@ -50,16 +49,18 @@ const Footer: React.FC<{
     <VStack maxW={maxWidth} mx="auto" my={5}>
       <SocialMediaSection links={socialMediaLinks} />
       <HStack w="100%">
-        <Text flexGrow={1} fontWeight="semibold" color="blackAlpha.500">&copy;2021 Copyright Mena Filfil</Text>
+        <Text flexGrow={1} fontWeight="semibold" color="blackAlpha.500">
+          &copy;2021 Copyright Mena Filfil
+        </Text>
         <List
           as={HStack}
           minW="175px"
           justifyContent="space-between"
           alignSelf="start"
         >
-          {footerLinks.map((l) => (
-            <ListItem as={LinkSpan} to={l.path}>
-              {l.name}
+          {footerLinks.map(({ path, name }, idx) => (
+            <ListItem as={LinkSpan} to={path} key={idx}>
+              {name}
             </ListItem>
           ))}
         </List>
