@@ -13,3 +13,12 @@ export type Link = {
 export type SocialMediaLink = Link & {
   icon: IconType;
 };
+
+export type Project = {
+  name: string;
+  tags: string[];
+  preview: string;
+  description: string;
+  createdAt: Date;
+  link?: string;
+};
