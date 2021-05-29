@@ -1,6 +1,7 @@
+import { Heading, HStack, VStack } from "@chakra-ui/layout";
 import React from "react";
 import { Helmet } from "react-helmet";
-import { Link } from "react-router-dom";
+import LinkSpan from "../components/LinkSpan";
 
 const NotFoundPage: React.FC = () => {
   return (
@@ -8,10 +9,18 @@ const NotFoundPage: React.FC = () => {
       <Helmet>
         <title>Mena Filfil - Not Found</title>
       </Helmet>
-      404: This Page is Not Found. Please check if the URL is correct and come
-      back again
-      <br />
-      <Link to="/">Go back to the homepage</Link>
+      <VStack h="80vh">
+        <HStack h="100%" justifyContent="space-between">
+          <Heading>
+            The page you are looking for is not found. Please check the URL and
+            try again.
+          </Heading>
+          <Heading size="4xl">😕</Heading>
+        </HStack>
+        <Heading>
+          Go back to <LinkSpan to="/">the homepage</LinkSpan>.
+        </Heading>
+      </VStack>
     </div>
   );
 };
