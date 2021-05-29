@@ -58,6 +58,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       minH="md"
       maxH="md"
       bgColor="gray.100"
+      _hover={{
+        transform: "scale(1.1)",
+        transition: "0.3s ease",
+      }}
+      transition="0.3s ease"
     >
       <Image src={preview} roundedTop="lg" />
       <Box p={3}>

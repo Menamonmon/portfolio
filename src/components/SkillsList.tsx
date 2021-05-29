@@ -2,33 +2,36 @@ import { Box, Heading, List, ListItem, Text, VStack } from "@chakra-ui/layout";
 import { ScaleFade } from "@chakra-ui/transition";
 import React from "react";
 import { Skill } from "../types";
+import HoverEnlargeAnimation from "./HoverEnlargeAnimation";
 import Title from "./Title";
 import TransitionOnEnterViewport from "./TransitionOnEnterViewport";
 
 const SkillItem: React.FC<Skill> = ({ name, icon: Icon }) => {
   return (
     <TransitionOnEnterViewport as={ScaleFade}>
-      <ListItem
-        as={VStack}
-        rounded="lg"
-        bgColor="gray.200"
-        boxShadow="lg"
-        _hover={{
-          bgColor: "gray.100",
-          cursor: "pointer",
-          transition: "all 500ms",
-        }}
-        transition="all 500ms"
-        minW="150px"
-        p={5}
-        m={2}
-        userSelect="none"
-      >
-        <Text fontSize="5xl">
-          <Icon />
-        </Text>
-        <Heading size="md">{name}</Heading>
-      </ListItem>
+      <HoverEnlargeAnimation transform="scale(1.2)">
+        <ListItem
+          as={VStack}
+          rounded="lg"
+          bgColor="gray.200"
+          boxShadow="lg"
+          _hover={{
+            bgColor: "gray.100",
+            cursor: "pointer",
+            transition: "all 500ms",
+          }}
+          transition="all 500ms"
+          minW="150px"
+          p={5}
+          m={2}
+          userSelect="none"
+        >
+          <Text fontSize="5xl">
+            <Icon />
+          </Text>
+          <Heading size="md">{name}</Heading>
+        </ListItem>
+      </HoverEnlargeAnimation>
     </TransitionOnEnterViewport>
   );
 };
