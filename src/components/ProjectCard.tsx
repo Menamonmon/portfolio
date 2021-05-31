@@ -27,13 +27,21 @@ function formatDate(date: Date) {
   return `${months[date.getMonth()]}, ${date.getFullYear()}`;
 }
 
-const TagsBox: React.FC<{ tags: Project["tags"] }> = ({ tags }) => (
+const TagsBox: React.FC<{ tags: Project["tags"]; inProgress: boolean }> = ({
+  tags,
+  inProgress,
+}) => (
   <Box>
     {tags.map((t) => (
       <Badge colorScheme="blue" mx={1}>
         {t}
       </Badge>
     ))}
+    {inProgress && (
+      <Badge colorScheme="red" mx={1}>
+        In Progress
+      </Badge>
+    )}
   </Box>
 );
 
@@ -43,7 +51,7 @@ interface ProjectCardProps {
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
-  project: { name, link, description, preview, createdAt, tags },
+  project: { name, link, description, preview, createdAt, tags, inProgress },
   onClick,
 }) => (
   <TransitionOnEnterViewport as={ScaleFade}>
@@ -66,7 +74,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     >
       <Image src={preview} roundedTop="lg" />
       <Box p={3}>
-        <TagsBox tags={tags} />
+        <TagsBox tags={tags} inProgress={inProgress} />
         <HStack justifyContent="space-between">
           <Heading size="md">{name}</Heading>
           {link && (

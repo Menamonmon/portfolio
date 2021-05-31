@@ -21,4 +21,5 @@ export type Project = {
   description: string;
   createdAt: Date;
   link?: string;
+  inProgress: boolean;
 };
