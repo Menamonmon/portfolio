@@ -1,7 +1,12 @@
 import React from "react";
+import PageContainer from "../layout/PageContainer";
 
 const PrivacyPolicyPage = () => {
-  return <div>PRIVACY POLICY</div>;
+  return (
+    <PageContainer>
+      <div>PRIVACY POLICY</div>
+    </PageContainer>
+  );
 };
 
 export default PrivacyPolicyPage;

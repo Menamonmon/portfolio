@@ -24,8 +24,8 @@ import { Project, Skill, SocialMediaLink } from "./types";
 
 const maxWidth = "850px";
 const navLinks: Link[] = [
-  { name: "About", path: "/about" },
   { name: "Projects", path: "/projects" },
+  { name: "Contact Me", path: "/contact-me" },
 ];
 const skills: Skill[] = [
   { icon: SiReact, name: "React.js" },

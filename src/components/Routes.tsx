@@ -3,7 +3,6 @@ import { Switch, Route } from "react-router-dom";
 
 import {
   HomePage,
-  AboutPage,
   ProjectsPage,
   NotFoundPage,
   ContactMePage,
@@ -14,7 +13,6 @@ const Routes: React.FC = () => {
   return (
     <Switch>
       <Route exact strict path="/" component={HomePage} />
-      <Route exact strict path="/about" component={AboutPage} />
       <Route exact strict path="/projects" component={ProjectsPage} />
       <Route exact strict path="/contact-me" component={ContactMePage} />
       <Route
