@@ -10,7 +10,7 @@ const ColorModeButton: React.FC = () => {
     setMode((p: string) => (p === "dark" ? "light" : "dark"));
   };
   return (
-    <Tooltip label={mode + " mode"} rounded="lg">
+    <Tooltip label={mode + " mode"}>
       <IconButton
         rounded="xl"
         aria-label="color-mode-btn"
