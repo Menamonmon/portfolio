@@ -12,7 +12,13 @@ interface NavItemProps {
 }
 
 const NavItem: React.FC<NavItemProps> = ({ link: { path, name } }) => (
-  <Button as={ChakraRouterLink} variant="ghost" rounded="xl" to={path}>
+  <Button
+    as={ChakraRouterLink}
+    variant="ghost"
+    rounded="xl"
+    colorScheme="blue"
+    to={path}
+  >
     {name}
   </Button>
 );

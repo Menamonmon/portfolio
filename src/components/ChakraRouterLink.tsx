@@ -7,7 +7,13 @@ import {
 
 export type ChakraRouterLinkProps = LinkProps & ChakraLinkProps;
 const ChakraRouterLink: React.FC<ChakraRouterLinkProps> = (props) => {
-  return <ChakraLink as={RouterLink} {...props}></ChakraLink>;
+  return (
+    <ChakraLink
+      _hover={{ textDecor: "none" }}
+      as={RouterLink}
+      {...props}
+    ></ChakraLink>
+  );
 };
 
 export default ChakraRouterLink;
