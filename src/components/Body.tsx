@@ -1,6 +1,5 @@
 import { useColorModeValue } from "@chakra-ui/color-mode";
 import { Text, TextProps } from "@chakra-ui/layout";
-import { useColorModePreference } from "@chakra-ui/media-query";
 import React from "react";
 
 const Body: React.FC<TextProps> = (props) => {

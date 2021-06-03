@@ -59,6 +59,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 }) => {
   const bg = useColorModeValue("gray.50", "gray.900");
   const dateColor = useColorModeValue("blackAlpha.700", "gray.400");
+  const border = useColorModeValue("gray.50", "gray.600");
   return (
     <TransitionOnEnterViewport as={ScaleFade}>
       <ListItem
@@ -67,6 +68,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         rounded="lg"
         mx={3}
         my={2}
+        borderWidth="1px"
+        borderColor={border}
         boxShadow="lg"
         h="fit-content"
         minH="md"

@@ -9,7 +9,7 @@ import ChakraRouterLink from "./ChakraRouterLink";
 import ColorModeButton from "./ColorModeButton";
 import { Avatar } from "@chakra-ui/avatar";
 import avatarPic from "../img/profile-pic.jpg";
-import { useColorModeValue } from "@chakra-ui/color-mode";
+import { useColorMode, useColorModeValue } from "@chakra-ui/color-mode";
 
 interface Props {
   links: Link[];
@@ -18,6 +18,7 @@ interface Props {
 
 const Navbar: React.FC<Props> = ({ homeLink, links }) => {
   const navColor = useColorModeValue("white", "gray.900");
+  const borderColor = useColorModeValue("white", "gray.500");
   return (
     <Box
       boxShadow="lg"
@@ -26,6 +27,8 @@ const Navbar: React.FC<Props> = ({ homeLink, links }) => {
       zIndex={99}
       bgColor={navColor}
       w="100%"
+      borderBottomWidth="2px"
+      borderColor={borderColor}
     >
       <HStack py={2} maxWidth={maxWidth} mx="auto">
         <Avatar

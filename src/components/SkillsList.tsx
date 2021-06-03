@@ -1,4 +1,4 @@
-import { useColorMode, useColorModeValue } from "@chakra-ui/color-mode";
+import { useColorModeValue } from "@chakra-ui/color-mode";
 import { Box, Heading, List, ListItem, Text, VStack } from "@chakra-ui/layout";
 import { ScaleFade } from "@chakra-ui/transition";
 import React from "react";

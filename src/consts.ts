@@ -27,6 +27,7 @@ const maxWidth = "850px";
 const navLinks: Link[] = [
   { name: "Projects", path: "/projects" },
   { name: "Contact Me", path: "/contact-me" },
+  { name: "Resume", path: "https://youtube.com", isAnchor: true },
 ];
 const skills: Skill[] = [
   { icon: SiReact, name: "React.js" },
