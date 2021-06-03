@@ -9,7 +9,7 @@ import ChakraRouterLink from "./ChakraRouterLink";
 import ColorModeButton from "./ColorModeButton";
 import { Avatar } from "@chakra-ui/avatar";
 import avatarPic from "../img/profile-pic.jpg";
-import { useColorMode, useColorModeValue } from "@chakra-ui/color-mode";
+import { useColorModeValue } from "@chakra-ui/color-mode";
 
 interface Props {
   links: Link[];
