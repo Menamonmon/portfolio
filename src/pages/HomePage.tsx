@@ -28,11 +28,11 @@ const HomePage: React.FC = () => {
           <UnorderedList pl={5}>
             <ListItem>
               Freelancing on{" "}
-              <LinkSpan to="https://fiverr.com/menamonmon">Fiverr</LinkSpan>
+              <LinkSpan to="https://fiverr.com/menamonmon" isAnchor>Fiverr</LinkSpan>
             </ListItem>
             <ListItem>
               Working on{" "}
-              <LinkSpan to="https://medstempowered.org">
+              <LinkSpan to="https://medstempowered.org" isAnchor>
                 the MedSTEMPowered
               </LinkSpan>{" "}
               website
@@ -44,7 +44,7 @@ const HomePage: React.FC = () => {
             </ListItem>
             <ListItem>
               Working on my own independent{" "}
-              <LinkSpan to="/projects">projects</LinkSpan>
+              <LinkSpan to="/projects" >projects</LinkSpan>
             </ListItem>
           </UnorderedList>
         </Body>
