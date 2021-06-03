@@ -1,3 +1,4 @@
+import { useColorMode, useColorModeValue } from "@chakra-ui/color-mode";
 import { Box, Heading, List, ListItem, Text, VStack } from "@chakra-ui/layout";
 import { ScaleFade } from "@chakra-ui/transition";
 import React from "react";
@@ -7,16 +8,19 @@ import Title from "./Title";
 import TransitionOnEnterViewport from "./TransitionOnEnterViewport";
 
 const SkillItem: React.FC<Skill> = ({ name, icon: Icon }) => {
+  const bg = useColorModeValue("gray.200", "gray.900");
+  const hoverBg = useColorModeValue("gray.100", "gray.700");
+
   return (
     <TransitionOnEnterViewport as={ScaleFade}>
       <HoverEnlargeAnimation transform="scale(1.2)">
         <ListItem
           as={VStack}
           rounded="lg"
-          bgColor="gray.200"
+          bgColor={bg}
           boxShadow="lg"
           _hover={{
-            bgColor: "gray.100",
+            bgColor: hoverBg,
             cursor: "pointer",
             transition: "all 500ms",
           }}

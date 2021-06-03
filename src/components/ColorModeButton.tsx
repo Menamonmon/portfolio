@@ -1,21 +1,18 @@
 import { IconButton } from "@chakra-ui/button";
+import { useColorMode } from "@chakra-ui/color-mode";
 import { Tooltip } from "@chakra-ui/tooltip";
 import React, { useState } from "react";
-import { FaSun, FaRegSun } from "react-icons/fa";
+import { FaSun, FaRegSun, FaMoon } from "react-icons/fa";
 
 const ColorModeButton: React.FC = () => {
-  const [mode, setMode] = useState<string>("dark");
-
-  const switchColor = () => {
-    setMode((p: string) => (p === "dark" ? "light" : "dark"));
-  };
+  const { colorMode, toggleColorMode } = useColorMode();
   return (
-    <Tooltip label={mode + " mode"}>
+    <Tooltip label={colorMode + " mode"}>
       <IconButton
         rounded="xl"
         aria-label="color-mode-btn"
-        icon={mode === "light" ? <FaSun /> : <FaRegSun />}
-        onClick={switchColor}
+        icon={colorMode === "light" ? <FaSun /> : <FaMoon />}
+        onClick={toggleColorMode}
       />
     </Tooltip>
   );

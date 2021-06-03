@@ -1,3 +1,4 @@
+import { useColorModeValue } from "@chakra-ui/color-mode";
 import {
   Heading,
   HStack,
@@ -15,6 +16,7 @@ import LinkSpan from "./LinkSpan";
 const SocialMediaSection: React.FC<{ links: SocialMediaLink[] }> = ({
   links,
 }) => {
+  const color = useColorModeValue("gray.800", "gray.100");
   return (
     <VStack mx="auto">
       <Heading size="sm">Follow Me On Social Media</Heading>
@@ -25,8 +27,8 @@ const SocialMediaSection: React.FC<{ links: SocialMediaLink[] }> = ({
             to={path}
             isAnchor
             target="_blank"
-            color="inherit"
             key={idx}
+            color={color}
             rounded="full"
           >
             <Tooltip label={name}>
@@ -45,11 +47,13 @@ const Footer: React.FC<{
   footerLinks: Link[];
   socialMediaLinks: SocialMediaLink[];
 }> = ({ footerLinks, socialMediaLinks }) => {
+  const copyrightColor = useColorModeValue("blackAlpha.500", "gray.400");
+
   return (
     <VStack maxW={maxWidth} mx="auto" my={5}>
       <SocialMediaSection links={socialMediaLinks} />
       <HStack w="100%">
-        <Text flexGrow={1} fontWeight="semibold" color="blackAlpha.500">
+        <Text flexGrow={1} fontWeight="semibold" color={copyrightColor}>
           &copy;2021 Copyright Mena Filfil
         </Text>
         <List

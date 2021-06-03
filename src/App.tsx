@@ -10,11 +10,12 @@ import { ChakraProvider } from "@chakra-ui/react";
 
 import "./App.css";
 import Footer from "./components/Footer";
+import theme from "./theme";
 
 const App: React.FC = () => {
   return (
     <div>
-      <ChakraProvider>
+      <ChakraProvider theme={theme}>
         <Router>
           <Navbar homeLink={{ name: "Home", path: "/" }} links={navLinks} />
           <Routes />

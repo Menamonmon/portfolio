@@ -9,6 +9,7 @@ import ChakraRouterLink from "./ChakraRouterLink";
 import ColorModeButton from "./ColorModeButton";
 import { Avatar } from "@chakra-ui/avatar";
 import avatarPic from "../img/profile-pic.jpg";
+import { useColorModeValue } from "@chakra-ui/color-mode";
 
 interface Props {
   links: Link[];
@@ -16,7 +17,7 @@ interface Props {
 }
 
 const Navbar: React.FC<Props> = ({ homeLink, links }) => {
-  const navColor = "white";
+  const navColor = useColorModeValue("white", "gray.900");
   return (
     <Box
       boxShadow="lg"

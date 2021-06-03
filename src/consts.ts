@@ -18,6 +18,7 @@ import {
   SiReact,
   SiSocketDotIo,
   SiTwitter,
+  SiTypescript,
 } from "react-icons/si";
 import { Link } from "./components/NavItem";
 import { Project, Skill, SocialMediaLink } from "./types";
@@ -36,8 +37,10 @@ const skills: Skill[] = [
   { icon: SiGithub, name: "GitHub" },
   { icon: SiMaterialUi, name: "Material UI" },
   { icon: SiJavascript, name: "JavaScript" },
+  { icon: SiTypescript, name: "TypeScript" },
   { icon: SiPostgresql, name: "PostgreSQL" },
   { icon: SiNodeDotJs, name: "Node.JS" },
+  { icon: SiNodeDotJs, name: "Express.JS" },
   { icon: SiHtml5, name: "HTML/CSS" },
   { icon: SiLinux, name: "Linux" },
   { icon: SiNextDotJs, name: "Next.JS" },
