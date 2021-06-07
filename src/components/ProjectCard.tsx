@@ -25,7 +25,7 @@ function formatDate(date: Date) {
     "November",
     "December",
   ];
-  return `${months[date.getMonth()]}, ${date.getFullYear()}`;
+  return `${months[date.getMonth() + 1]}, ${date.getFullYear()}`;
 }
 
 const TagsBox: React.FC<{ tags: Project["tags"]; inProgress: boolean }> = ({
@@ -81,7 +81,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         }}
         transition="0.3s ease"
       >
-        <Image src={preview} roundedTop="lg" />
+        <Image
+          cursor="pointer"
+          src={preview}
+          roundedTop="lg"
+          onClick={onClick}
+        />
         <Box p={3}>
           <TagsBox tags={tags} inProgress={inProgress} />
           <HStack justifyContent="space-between">

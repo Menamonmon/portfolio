@@ -1,4 +1,5 @@
 import { Button } from "@chakra-ui/button";
+import { Image } from "@chakra-ui/image";
 import { Box, List } from "@chakra-ui/layout";
 import {
   Modal,
@@ -11,6 +12,7 @@ import {
 } from "@chakra-ui/modal";
 import React, { useCallback, useState } from "react";
 import { Helmet } from "react-helmet";
+import LinkSpan from "../components/LinkSpan";
 import ProjectCard from "../components/ProjectCard";
 import Title from "../components/Title";
 import { projects } from "../consts";
@@ -47,7 +49,23 @@ const ProjectsPage: React.FC = () => {
           <ModalContent>
             <ModalHeader>{openedProject?.name}</ModalHeader>
             <ModalCloseButton />
-            <ModalBody>{openedProject?.description}</ModalBody>
+            <ModalBody w="fit-content">
+              <LinkSpan
+                isAnchor
+                target="_blank"
+                to={openedProject?.preview ? openedProject.preview : ""}
+              >
+                <Image
+                  src={openedProject?.preview}
+                  rounded="lg"
+                  _hover={{
+                    filter: "brightness(1.2)  ",
+                  }}
+                  w="700px"
+                />
+              </LinkSpan>
+              {openedProject?.description}
+            </ModalBody>
             <ModalFooter>
               <Button onClick={onClose}>Close</Button>
             </ModalFooter>
